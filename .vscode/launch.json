@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "by-gdb",
+            "request": "attach",
+            "name": "Attach(gdb)",
+            "program": "${fileBasenameNoExtension}",
+            "cwd": "${workspaceRoot}",
+            "processId": 1234
+        },
+        {
+            "type": "vslsRemoteLaunch",
+            "name": "MauiHackathon",
+            "request": "attach",
+            "projectID": "f1f9550d-7b48-44cb-92ef-05b37ee13982"
+        }
+    ]
+}

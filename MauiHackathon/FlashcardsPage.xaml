@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiHackathon.FlashcardsPage"
+             Title="FlashcardsPage">
+    
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Grid RowDefinitions="150, 200, 150, 50, 150, 300, 150, 50, 150, Auto"
+                  ColumnDefinitions="250, Auto, 250"         
+                  RowSpacing="10"
+                  ColumnSpacing="10">
+
+                <Label Grid.Row="1"
+                       Grid.ColumnSpan="3"
+                       Text="Study Cards"
+                       FontSize="50"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Start"/>
+
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Text="Begin Study Session"
+                        TextColor="Black"
+                        FontSize="30"
+                        BackgroundColor="Green"/>
+
+                <Label Grid.Row="3"
+                       Grid.ColumnSpan="3"
+                       BackgroundColor="#5d6a70"/>
+
+                <Entry Grid.Row="4"
+                       Grid.ColumnSpan="3"
+                       Placeholder="New Term / Phrase"/>
+
+                <Entry Grid.Row="5"
+                       Grid.ColumnSpan="3"
+                       Placeholder="Definition / Description"/>
+
+                <Button Grid.Row="6"
+                        Grid.Column="1"
+                        Text="Add Card"
+                        BackgroundColor="Green"/>
+
+                <Entry Grid.Row="7"
+                       Grid.ColumnSpan="3"
+                       BackgroundColor="#5d6a70"/>
+
+                <Label Grid.Row="8"
+                       Grid.ColumnSpan="3"
+                       Text="Current Cards:"
+                       FontSize="50"/>
+
+                <CollectionView Grid.Row="9"
+                                Grid.ColumnSpan="3">
+                    <CollectionView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>CARD1</x:String>
+                            <x:String>CARD2</x:String>
+                            <x:String>CARD3</x:String>
+                        </x:Array>
+                    </CollectionView.ItemsSource>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Remove"
+                                                   BackgroundColor="Red"/>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
+
+
+
+
+
+
+
+            </Grid>
+              
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
